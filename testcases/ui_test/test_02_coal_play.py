@@ -7,8 +7,8 @@ from page.coal_play_page import CoalPlayPage
 @allure.suite('物流站台模块')
 @allure.story('创建上煤计划')
 class TestCoalPlay:
-    phone = conf.get('test3', 'phone')
-    code = conf.get('test3', 'code')
+    phone = conf.get('test3-rest', 'phone')
+    code = conf.get('test3-rest', 'code')
 
     @allure.title('创建上煤计划')
     def test_coaling_play(self, login_fixture):
