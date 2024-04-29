@@ -12,6 +12,9 @@ class CreateLog:
         self.filename = filename
         self.sh_level = sh_level
         self.fh_level = fh_level
+        if not os.path.exists("logs"):
+            # 如果不存在，则创建 logs 文件夹
+            os.makedirs("logs")
 
     def creat_log(self):
         # 创建日志收集器
