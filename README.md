@@ -1,14 +1,29 @@
 # auto-test
 
 
-本项目实现接口自动化的技术选型：**Python+Requests+Pytest+Allure** ，通过 Python+Requests 来发送和处理HTTP协议的请求接口，使用 Pytest 作为测试执行器，使用 Excel 来管理测试数据，使用 Allure 来生成测试报告。
-
+`auto-test` 是一个基于Python的自动化测试框架，集成了Requests进行HTTP请求处理，利用Pytest进行测试用例编写与执行，以及Allure用于生成详细的测试报告，旨在提高Web服务接口测试的效率与质量。
 ## 项目说明
-
 本项目在实现过程中，把整个项目拆分成请求方法封装、HTTP接口封装、关键字封装、测试用例等模块。
 
 首先利用Python把HTTP接口封装成Python接口，接着把这些Python接口组装成一个个的关键字，再把关键字组装成测试用例，而测试数据则通过Excel文件进行统一管理，然后再通过Pytest测试执行器来运行这些脚本，并结合Allure输出测试报告。
+## 技术栈
 
+- **编程语言**: Python
+- **HTTP请求库**: Requests
+- **测试框架**: Pytest
+- **测试报告**: Allure
+
+## 环境要求
+- Python 3.12
+- allure-pytest==2.13.5
+- jsonpath==0.82.2
+- openpyxl==3.1.2
+- PyMySQL==1.1.0
+- pytest==8.2.0
+- PyYAML==6.0.1
+- redis==5.0.4
+- requests==2.31.0
+- playwright==1.43.0
 ## 安装与配置
 
 首先，下载项目源码后，在根目录下找到 ```requirements.txt``` 文件，然后通过 pip 工具安装 requirements.txt 依赖，命令行中执行命令：
@@ -16,11 +31,12 @@
 ```
 pip3 install -r requirements.txt
 ```
-快速启动，命令行中执行命令：
+## 快速开始
+1. **运行测试**:
 ```
 python run.py
 ```
-在命令行执行命令：```python run.py``` 运行用例后，会自动生成测试报告，测试报告文件在 ```reports``` 目录下。
+因为run.py文件中，有调用allure serve 的命令，无需单独执行allure serve 命令。在命令行执行命令：```python run.py``` 运行用例后，会自动生成测试报告，测试报告文件在 ```reports``` 目录下。
 ### 测试报告效果展示
 
 1. 报告状态（下图status对应的颜色）：
