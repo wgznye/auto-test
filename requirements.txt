@@ -1,0 +1,8 @@
+allure-pytest==2.13.5
+jsonpath==0.82.2
+openpyxl==3.1.2
+PyMySQL==1.1.0
+pytest==8.2.0
+PyYAML==6.0.1
+redis==5.0.4
+requests==2.31.0
