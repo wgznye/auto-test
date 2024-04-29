@@ -37,6 +37,9 @@ def common_api(casesId, host, path, param, param_type, method, header, header_ch
         elif method == 'PUT':
             response = client.put(path, data=param, headers=headerObj)
             result = response.json()
+        elif method == 'DELETE':
+            response = client.put(path, data=param, headers=headerObj)
+            result = response.json()
         else:
             print(param)
     except requests.exceptions.ConnectTimeout as e:

@@ -60,8 +60,29 @@ python run.py
 - requirements.txt ====>> 相关依赖包文件
 - testcases ====>> 测试用例
 
-## 接口测试
+## 接口测试数据结构
+
+接口测试用例数据文件说明
+- case_id：用例编号
+- env：执行用例环境
+- module：模块名称
+- title: 用例标题
+- path: 请求路径
+- method: 请求方法：POST、GET、PUT、DELETE
+- header: 请求头 有特殊的请求头可以设置
+- auth: 是否需要认证：需要认证设置Authorization即可
+- param: 请求参数
+- param_type: 请求参数类型：params、json
+- execute_sql: 是否执行sql：0-不执行，1-执行
+- sql: 执行的sql
+- expect: 预期结果
+- change_word: 请求参数中需要替换的字符
+- execute_count: 执行次数
+
 ![img_1.png](img_1.png)
+
+
+
 
 
 
