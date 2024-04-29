@@ -25,6 +25,17 @@
 - requests==2.31.0
 - playwright==1.43.0
 ## 安装与配置
+### mac 
+安装allure 命令（allure的运行依赖于Java环境，需要先安装JDK1.8+）：
+如没有Java环境，可以使用brew安装：
+```
+brew install openjdk@8
+```
+安装allure命令：
+```
+brew install allure
+```
+
 
 首先，下载项目源码后，在根目录下找到 ```requirements.txt``` 文件，然后通过 pip 工具安装 requirements.txt 依赖，命令行中执行命令：
 

@@ -2,10 +2,11 @@ import requests
 import json
 import datetime
 from core.result_base import ResultBase
-from common.handle_redis import redisOps
 from core.rest_client import RestClient
 from common.handle_log import dgLog
 
+#缓存token放到字典
+token_dict = {}
 
 class DateEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -17,7 +18,7 @@ class DateEncoder(json.JSONEncoder):
 def common_api(casesId, host, path, param, param_type, method, header, header_change):
     # 封装请求
     client = RestClient(host)
-    redis_auth = redisOps.get_value(casesId)
+    redis_auth = token_dict.get(casesId)
     headerObj = assemble_header(header, redis_auth, header_change)
 
     result = None
@@ -52,7 +53,8 @@ def common_api(casesId, host, path, param, param_type, method, header, header_ch
         resultBase.source = result["data"]["source"]
         resultBase.token = result["data"]["token"]
         result_json = json.dumps(resultBase.__dict__)
-        redisOps.set_key_value(casesId, result_json)
+        token_dict[casesId] = result_json
+        print("token_dict:", token_dict)
     return result
 
 

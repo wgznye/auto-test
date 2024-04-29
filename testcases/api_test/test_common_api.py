@@ -13,7 +13,6 @@ from common.dealrely import treat_data
 from common.handle_assert import AssertRe
 from common.handle_request import HandleRequest
 from common.CleanCache import CleanCache
-from common.handle_redis import redisOps
 
 CleanCache.clean_dir("./reports")
 
